@@ -7,11 +7,11 @@ Version:	0.5
 Release:	10
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://prdownloads.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
 BuildRequires:	XFree86-devel
-BuildRequires:	imlib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	imlib-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,7 +55,6 @@ Arquivos de inclusão, bibliotecas e documentação para a fnlib.
 
 %package static
 Summary:	Fnlib static libraries
-Summary(es):	Static libraries for fnlib development
 Summary(pl):	Biblioteki statyczne fnlib
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com fnlib
 Group:		X11/Development/Libraries
@@ -63,9 +62,6 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Fnlib static libraries.
-
-%description static -l es
-Static libraries for fnlib development
 
 %description static -l pl
 Biblioteki statyczne fnlib.
