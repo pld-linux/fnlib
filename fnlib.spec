@@ -1,4 +1,4 @@
-Summary:	Color Font rendering lobrary for X11R6
+Summary:	Color Font rendering library for X11R6
 Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
 Version:	0.4
@@ -43,10 +43,10 @@ Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
-Fnlib static libraries 
+Fnlib static libraries.
 
 %description -l pl static
-Biblioteki statyczne fnlib
+Biblioteki statyczne fnlib.
 
 %prep
 %setup -q
