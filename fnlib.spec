@@ -83,7 +83,7 @@ libtoolize --copy --force
 aclocal
 autoconf
 autoheader
-automake -a -c
+automake -a -c -f
 %configure
 
 %{__make} fontsdir=%{_datadir}/fnlib_fonts
