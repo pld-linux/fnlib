@@ -87,7 +87,8 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -98,7 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %config %{_sysconfdir}/*
 %{_datadir}/fnlib_fonts
