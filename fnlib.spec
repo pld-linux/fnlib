@@ -2,7 +2,7 @@ Summary:	Color Font rendering library for X11R6
 Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
 Version:	0.5
-Release:	5
+Release:	6
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -17,6 +17,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -72,10 +73,12 @@ Biblioteki statyczne fnlib.
 %setup -q
 
 %build
+rm -f missing
+libtoolize --copy --force
 aclocal
-automake -a -c
 autoconf
 autoheader
+automake -a -c
 %configure
 
 %{__make} fontsdir=%{_datadir}/fnlib_fonts
