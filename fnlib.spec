@@ -7,13 +7,6 @@ Version:	0.5
 Release:	10
 License:	LGPL
 Group:		X11/Libraries
-Group(de):	X11/Libraries
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(ru):	X11/Библиотеки
-Group(uk):	X11/Б╕бл╕отеки
 Source0:	ftp://www.rasterman.com/pub/enlightenment/libs/fnlib/%{name}-%{version}.tar.gz
 BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel
@@ -46,13 +39,6 @@ Summary(es):	Archivos de inclusiСn, bibliotecas estАticas y documentaciСn para f
 Summary(pl):	Pliki nagЁСwkowe oraz dokumentacja
 Summary(pt_BR):	Arquivos de inclusЦo, bibliotecas e documentaГЦo para a fnlib
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/Разработка/Библиотеки
-Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -74,13 +60,6 @@ Summary(es):	Static libraries for fnlib development
 Summary(pl):	Biblioteki statyczne fnlib
 Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com fnlib
 Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(es):	X11/Desarrollo/Bibliotecas
-Group(fr):	X11/Development/Librairies
-Group(pl):	X11/Programowanie/Biblioteki
-Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
-Group(ru):	X11/Разработка/Библиотеки
-Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
