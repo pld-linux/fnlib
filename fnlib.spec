@@ -3,10 +3,10 @@ Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
 Version:	0.4
 Release:	11
-Copyright:	LGPL
+License:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
-Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/fnlib/%{name}-%{version}.tar.gz
 BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -15,12 +15,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	/etc/X11
 
 %description
-Fnlib is a library that provides full scalable 24-bit Color font rendering
-abilities for X.
+Fnlib is a library that provides full scalable 24-bit Color font
+rendering abilities for X.
 
 %description -l pl
-Fnlib jest bibliotek±, która umo¿liwia renderowanie fontów skalowalnych pod
-X11.
+Fnlib jest bibliotek±, która umo¿liwia renderowanie fontów
+skalowalnych pod X11.
 
 %package devel
 Summary:	Fnlib headers and documentation
@@ -87,5 +87,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 
 %files static
-%defattr(644,root,root)
+%defattr(644,root,root,755)
 %{_libdir}/lib*.a
