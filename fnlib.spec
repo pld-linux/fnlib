@@ -52,7 +52,6 @@ Biblioteki statyczne fnlib.
 %setup -q
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure
 
 %{__make} fontsdir=%{_datadir}/fnlib_fonts
@@ -61,9 +60,7 @@ LDFLAGS="-s"; export LDFLAGS
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
-
-gzip -9nf {README,doc/fontinfo.README}
+gzip -9nf README doc/fontinfo.README
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
