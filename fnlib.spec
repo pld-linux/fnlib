@@ -2,7 +2,7 @@ Summary:     Color Font rendering lobrary for X11R6
 Summary(pl): Biblioteki do renderowania fontów pod X11R6
 Name:        fnlib
 Version:     0.3
-Release:     3
+Release:     4
 Copyright:   LGPL
 Group:       X11/Libraries
 Source:      ftp://www.rasterman.com/pub/enlightenment/libs/fnlib/%{name}_DR-%{version}.tar.gz
@@ -14,7 +14,8 @@ Fnlib is a library that provides full scalable 24-bit Color font rendering
 abilities for X.
 
 %description -l pl
-Fnlib jest bibliotek±, która umo¿liwia renderowanie fontów skalowalnych pod X11. 
+Fnlib jest bibliotek±, która umo¿liwia renderowanie fontów skalowalnych pod
+X11.
 
 %package devel
 Summary:     Fnlib headers and documentation
@@ -46,7 +47,6 @@ Biblioteki statyczne fnlib
 %build
 CFLAGS="$RPM_OPT_FLAGS" ./configure \
 	--prefix=/usr/X11R6 \
-	--includedir=/usr/X11R6/include/X11 \
 	--sysconfdir=/etc
 make 
 
@@ -54,7 +54,6 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install \
     prefix=$RPM_BUILD_ROOT/usr/X11R6 \
-    includedir=$RPM_BUILD_ROOT/usr/X11R6/include/X11 \
     sysconfdir=$RPM_BUILD_ROOT/etc
 
 strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
@@ -76,15 +75,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc HACKING doc/index.html doc/fontinfo.README
 /usr/X11R6/lib/lib*.so
-/usr/X11R6/include/X11/*
+/usr/X11R6/include/*
 
 %files static
 %attr(644, root,root) /usr/X11R6/lib/*.a
 
 %changelog
+* Wed Oct 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.3-4]
+- header files moved to /usr/X11R6/include.
+
 * Sat Sep 26 1998 Arkadiusz Mi¶kiewicz <misiek@misiek.eu.org>
   [0.3-3]
-- added polish translation.
+- added pl translation.
 
 * Tue Jul 07 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
   [0.3-2]
