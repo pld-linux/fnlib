@@ -81,9 +81,9 @@ Bibliotecas estáticas para desenvolvimento com fnlib
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
+%{__autoconf}
 autoheader
-automake -a -c -f
+%{__automake}
 %configure
 
 %{__make} fontsdir=%{_datadir}/fnlib_fonts
