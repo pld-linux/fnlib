@@ -57,6 +57,8 @@ make install \
     includedir=$RPM_BUILD_ROOT/usr/X11R6/include/X11 \
     sysconfdir=$RPM_BUILD_ROOT/etc
 
+strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -66,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644, root, root, 755)
 %doc README
-%attr(755, root, root) /usr/X11R6/lib/lib*.so.*
+%attr(755, root, root) /usr/X11R6/lib/lib*.so.*.*
 %config /etc/*
 /usr/X11R6/fnlib_fonts
 
