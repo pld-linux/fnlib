@@ -8,6 +8,7 @@ Release:	10
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+# Source0-md5:	42093ed5b684da01e7a674b2adac52c7
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
