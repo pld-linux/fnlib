@@ -47,14 +47,16 @@ Biblioteki statyczne fnlib
 %build
 CFLAGS="$RPM_OPT_FLAGS" ./configure \
 	--prefix=/usr/X11R6 \
+	--fontsdir
 	--sysconfdir=/etc
-make 
+make fontsdir=/usr/X11R6/share/fnlib_fonts
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install \
-    prefix=$RPM_BUILD_ROOT/usr/X11R6 \
-    sysconfdir=$RPM_BUILD_ROOT/etc
+	prefix=$RPM_BUILD_ROOT/usr/X11R6 \
+	fontsdir=$RPM_BUILD_ROOT/usr/X11R6/share/fnlib_fonts \
+	sysconfdir=$RPM_BUILD_ROOT/etc
 
 strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
@@ -81,9 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root,root) /usr/X11R6/lib/*.a
 
 %changelog
-* Wed Oct 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+* Mon Oct 26 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.3-4]
-- header files moved to /usr/X11R6/include.
+- header files moved to /usr/X11R6/include,
+- fontsdir changed to /usr/X11R6/share/fnlib_fonts.
 
 * Sat Sep 26 1998 Arkadiusz Mi¶kiewicz <misiek@misiek.eu.org>
   [0.3-3]
