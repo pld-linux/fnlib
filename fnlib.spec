@@ -55,7 +55,7 @@ Pliki nag³ówkowe oraz dokumentacja dla Fnliba.
 Arquivos de inclusão, bibliotecas e documentação para a fnlib.
 
 %package static
-Summary:	Fnlib static libraries 
+Summary:	Fnlib static libraries
 Summary(es):	Static libraries for fnlib development
 Summary(pl):	Biblioteki statyczne fnlib
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com fnlib
