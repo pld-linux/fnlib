@@ -93,8 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-gzip -9nf README doc/fontinfo.README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -103,7 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz
+%doc README
 
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %config %{_sysconfdir}/*
@@ -111,7 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/index.html doc/fontinfo.README.gz
+%doc doc/index.html doc/fontinfo.README
 
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/*
