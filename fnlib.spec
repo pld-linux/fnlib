@@ -89,35 +89,3 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root)
 /usr/X11R6/lib/lib*.a
-
-%changelog
-* Mon Apr 19 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.4-9]
-- recompiles on new rpm.
-
-* Sun Mar 21 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.4-2]
-- strip with --strip-unneeded shared libraries.
-
-* Tue Jan 05 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.4-1]
-- changed base Source Url to ftp://ftp.gnome.org/pub/GNOME/sources/,
-- sysconfdir changed to /etc/X11,
-- removed HACKING from %doc,
-- added useing DESTDIR in "make install",
-- added LDFLAGS="-s" to ./configure enviroment.
-
-* Mon Oct 26 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.3-4]
-- header files moved to /usr/X11R6/include,
-- fontsdir changed to /usr/X11R6/share/fnlib_fonts.
-
-* Sat Sep 26 1998 Arkadiusz Mi鄂iewicz <misiek@misiek.eu.org>
-  [0.3-3]
-- added pl translation.
-
-* Tue Jul 07 1998 Wojtek 奸usarczyk <wojtek@shadow.eu.org>
-  [0.3-2]
-- start at Raster spec,
-- added %changelog,
-- build against GNU libc-2.1.
