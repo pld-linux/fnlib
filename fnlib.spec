@@ -56,6 +56,10 @@ Biblioteki statyczne fnlib.
 %setup -q
 
 %build
+aclocal
+automake -a -c
+autoconf
+autoheader
 %configure
 
 %{__make} fontsdir=%{_datadir}/fnlib_fonts
