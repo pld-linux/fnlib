@@ -2,7 +2,7 @@ Summary:	Color Font rendering library for X11R6
 Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
 Version:	0.4
-Release:	10
+Release:	11
 Copyright:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
@@ -75,17 +75,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz
 
-%attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
-%config /etc/X11/*
-/usr/X11R6/share/fnlib_fonts
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%config %{_sysconfdir}/*
+%{_datadir}/fnlib_fonts
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/index.html doc/fontinfo.README.gz
 
-%attr(755,root,root) /usr/X11R6/lib/lib*.so
-/usr/X11R6/include/*
+%attr(755,root,root) %{_libdir}/lib*.so
+{_includedir}/*
 
 %files static
 %defattr(644,root,root)
-/usr/X11R6/lib/lib*.a
+%{_libdir}/lib*.a
