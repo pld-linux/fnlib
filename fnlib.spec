@@ -47,7 +47,6 @@ Biblioteki statyczne fnlib
 %build
 CFLAGS="$RPM_OPT_FLAGS" ./configure \
 	--prefix=/usr/X11R6 \
-	--fontsdir
 	--sysconfdir=/etc
 make fontsdir=/usr/X11R6/share/fnlib_fonts
 
@@ -71,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755, root, root) /usr/X11R6/lib/lib*.so.*.*
 %config /etc/*
-/usr/X11R6/fnlib_fonts
+/usr/X11R6/share/fnlib_fonts
 
 %files devel
 %defattr(644, root, root, 755)
