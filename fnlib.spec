@@ -79,7 +79,7 @@ Bibliotecas estáticas para desenvolvimento com fnlib
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 autoheader
