@@ -7,8 +7,8 @@ Copyright:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.gz
-BuildPrereq:	XFree86-devel
-BuildPrereq:	imlib-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	imlib-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
