@@ -7,7 +7,7 @@ Version:	0.5
 Release:	10
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://www.rasterman.com/pub/enlightenment/libs/fnlib/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
 BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel
 BuildRequires:	autoconf
