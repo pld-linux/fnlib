@@ -1,59 +1,57 @@
-Summary:    Color Font rendering lobrary for X11R6
-Name:       fnlib
-Version:    0.3
-Release:    2
-Copyright:  LGPL
-Group:      X11/Libraries
-Source:     ftp://www.rasterman.com/pub/enlightenment/enlightenment/fnlib_DR-%{version}.tar.gz
-Obsoletes:  Fnlib
-URL:        http://www.rasterman.com/
-BuildRoot:  /tmp/%{name}-%{version}-root
+Summary:     Color Font rendering lobrary for X11R6
+Summary(pl): Biblioteki do renderowania fontów pod X11R6
+Name:        fnlib
+Version:     0.3
+Release:     2
+Copyright:   LGPL
+Group:       X11/Libraries
+Source:      ftp://www.rasterman.com/pub/enlightenment/enlightenment/fnlib_DR-%{version}.tar.gz
+Obsoletes:   Fnlib
+URL:         http://www.rasterman.com/
+BuildRoot:   /tmp/%{name}-%{version}-root
 
 %description
 Fnlib is a library that provides full scalable 24-bit Color font rendering
 abilities for X.
 
+%description -l pl
+Fnlib jest bibliotek±, która umo¿liwia renderowanie fontów skalowalnych pod
+X11.
+
 %package devel
-Summary:    Fnlib header files and development documentation
-Group:      X11/Libraries
-Requires:   %{name} = %{version}
-Obsoletes:  Fnlib
+Summary:     Fnlib header files and development documentation
+Summary(pl): Pliki nag³ówkowe oraz dokumentacja do Fnlib
+Group:       X11/Libraries
+Requires:    %{name} = %{version}
+Obsoletes:   Fnlib
 
 %description devel
 Header files and documentation for Fnlib.
 
+%description devel -l pl
+Pliki nag³ówkowe oraz dokumentacja do Fnlib.
+
 %package static
-Summary:    Fnlib static libraries
-Group:      X11/Libraries
-Requires:   %{name}-devel = %{version}
+Summary:     Fnlib static libraries
+Summary(pl): Bibliteki statyczne Fnlib
+Group:       X11/Libraries
+Requires:    %{name}-devel = %{version}
 
 %description static
 Fnlib static libraries.
+
+%description static -l pl
+Bibliteki statyczne Fnlib.
 
 %prep
 %setup -q -n fnlib
 
 %build
-# Needed for snapshot releases.
-# Optimize that damned code all the way
-if [ ! -z "echo -n ${RPM_OPT_FLAGS} | grep pentium" ]; then
-  if [ ! -z `which egcs` ]; then
-    CC="egcs"
-  else
-    if [ ! -z `which pgcc` ]; then
-      CC="pgcc"
-    fi
-  fi
-  CFLAGS="${RPM_OPT_FLAGS}"
-else
-  CFLAGS="${RPM_OPT_FLAGS}"
-fi
 ./configure --prefix=/usr --sysconfdir=/etc
-make
+make CFLAGS=$RPM_OPT_FLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 make install \
 	prefix=$RPM_BUILD_ROOT/usr \
 	sysconfdir=$RPM_BUILD_ROOT/etc
@@ -87,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 * Thu Sep  3 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.3-2]
 - added -q %setup parameter,
+- adde pl translation (Wojtek ¦lusarczyk <wojtek@shadow.eu.org>),
 - changed Buildroot to /tmp/%%{name}-%%{version}-root,
 - added using %%{version} macro in Source,
 - added static subpackage
