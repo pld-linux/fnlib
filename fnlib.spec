@@ -4,7 +4,7 @@ Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Summary(pt_BR):	Biblioteca para renderização colorida de fontes para o X11R6
 Name:		fnlib
 Version:	0.5
-Release:	10
+Release:	11
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
