@@ -2,7 +2,7 @@ Summary:	Color Font rendering lobrary for X11R6
 Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
 Version:	0.4
-Release:	8
+Release:	9
 Copyright:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
@@ -17,7 +17,7 @@ abilities for X.
 Fnlib jest bibliotek±, która umo¿liwia renderowanie fontów skalowalnych pod
 X11.
 
-%package	devel
+%package devel
 Summary:	Fnlib headers and documentation
 Summary(pl):	Pliki nag³ówkowe oraz dokumentacja
 Group:		X11/Development/Libraries
@@ -84,9 +84,14 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/include/*
 
 %files static
-%attr(644,root,root) /usr/X11R6/lib/lib*.a
+%defattr(644,root,root)
+/usr/X11R6/lib/lib*.a
 
 %changelog
+* Mon Apr 19 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.4-9]
+- recompiles on new rpm.
+
 * Sun Mar 21 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.4-2]
 - strip with --strip-unneeded shared libraries.
