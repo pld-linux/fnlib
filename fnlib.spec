@@ -50,7 +50,7 @@ Biblioteki statyczne fnlib
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure \
+./configure %{_target} \
 	--prefix=/usr/X11R6 \
 	--sysconfdir=/etc/X11
 
