@@ -1,12 +1,14 @@
 Summary:	Color Font rendering library for X11R6
 Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
-Version:	0.4
-Release:	11
+Version:	0.5
+Release:	5
 License:	LGPL
 Group:		X11/Libraries
+Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
 Group(pl):	X11/Biblioteki
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/fnlib/%{name}-%{version}.tar.gz
+Source0:	ftp://www.rasterman.com/pub/enlightenment/libs/fnlib/%{name}-%{version}.tar.gz
 BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,6 +28,7 @@ skalowalnych pod X11.
 Summary:	Fnlib headers and documentation
 Summary(pl):	Pliki nag³ówkowe oraz dokumentacja
 Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
@@ -39,6 +42,7 @@ Pliki nag³ówkowe oraz dokumentacja dla Fnliba.
 Summary:	Fnlib static libraries 
 Summary(pl):	Biblioteki statyczne fnlib
 Group:		X11/Development/Libraries
+Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
@@ -58,6 +62,7 @@ Biblioteki statyczne fnlib.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 gzip -9nf README doc/fontinfo.README
