@@ -80,9 +80,9 @@ Bibliotecas estáticas para desenvolvimento com fnlib
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
-autoheader
+%{__autoheader}
 %{__automake}
 %configure
 
