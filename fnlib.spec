@@ -2,11 +2,11 @@ Summary:	Color Font rendering lobrary for X11R6
 Summary(pl):	Biblioteki do renderowania fontów pod X11R6
 Name:		fnlib
 Version:	0.4
-Release:	1d
+Release:	2
 Copyright:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
-Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.gz
 Requires:	imlib >= 1.9.2
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -21,8 +21,8 @@ X11.
 %package	devel
 Summary:	Fnlib headers and documentation
 Summary(pl):	Pliki nag³ówkowe oraz dokumentacja
-Group:		X11/Libraries
-Group(pl):	X11/Biblioteki
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -34,8 +34,8 @@ Pliki nag³ówkowe oraz dokumentacja dla Fnliba.
 %package static
 Summary:	Fnlib static libraries 
 Summary(pl):	Biblioteki statyczne fnlib
-Group:		X11/Libraries
-Group(pl):	X11/Biblioteki
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -58,22 +58,21 @@ make fontsdir=/usr/X11R6/share/fnlib_fonts
 rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 
-chmod 755 $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*
-strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
-bzip2 -9 doc/fontinfo.README README
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+gzip -9nf README
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(644,root,root,755)
-%doc README.bz2
+%doc README.gz
 
-%attr(755,root,root) /usr/X11R6/lib/lib*.so.*
+%attr(755,root,root) /usr/X11R6/lib/lib*.so.*.*
 %config /etc/X11/*
 /usr/X11R6/share/fnlib_fonts
 
@@ -86,9 +85,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-/usr/X11R6/lib/*.a
+/usr/X11R6/lib/lib*.a
 
 %changelog
+* Sun Mar 21 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.4-2]
+- strip with --strip-unneeded shared libraries.
+
 * Tue Jan 05 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.4-1]
 - changed base Source Url to ftp://ftp.gnome.org/pub/GNOME/sources/,
