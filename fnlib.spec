@@ -60,7 +60,7 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 strip --strip-unneeded $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
-gzip -9nf README
+gzip -9nf {README,doc/fontinfo.README}
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/index.html doc/fontinfo.README.bz2
+%doc doc/index.html doc/fontinfo.README.gz
 
 %attr(755,root,root) /usr/X11R6/lib/lib*.so
 /usr/X11R6/include/*
