@@ -84,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/index.html doc/fontinfo.README.gz
 
 %attr(755,root,root) %{_libdir}/lib*.so
-{_includedir}/*
+%{_includedir}/*
 
 %files static
 %defattr(644,root,root)
