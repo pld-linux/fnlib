@@ -1,12 +1,12 @@
 Summary:     Color Font rendering lobrary for X11R6
 Summary(pl): Biblioteki do renderowania fontów pod X11R6
 Name:        fnlib
-Version:     0.3
-Release:     4
+Version:     0.4
+Release:     1
 Copyright:   LGPL
 Group:       X11/Libraries
-Source:      ftp://www.rasterman.com/pub/enlightenment/libs/fnlib/%{name}_DR-%{version}.tar.gz
-Requires:    imlib >= 1.8.1
+Source:      ftp://ftp.gnome.org/pub/GNOME/sources/%{name}-%{version}.tar.gz
+Requires:    imlib >= 1.8.2
 BuildRoot:   /tmp/%{name}-%{version}-root
 
 %description
@@ -42,20 +42,18 @@ Fnlib static libraries
 Biblioteki statyczne fnlib
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure \
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+./configure \
 	--prefix=/usr/X11R6 \
-	--sysconfdir=/etc
+	--sysconfdir=/etc/X11
 make fontsdir=/usr/X11R6/share/fnlib_fonts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install \
-	prefix=$RPM_BUILD_ROOT/usr/X11R6 \
-	fontsdir=$RPM_BUILD_ROOT/usr/X11R6/share/fnlib_fonts \
-	sysconfdir=$RPM_BUILD_ROOT/etc
+make DESTDIR=$RPM_BUILD_ROOT install
 
 strip $RPM_BUILD_ROOT/usr/X11R6/lib/lib*.so.*.*
 
@@ -69,12 +67,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc README
 %attr(755, root, root) /usr/X11R6/lib/lib*.so.*.*
-%config /etc/*
+%config /etc/X11/*
 /usr/X11R6/share/fnlib_fonts
 
 %files devel
 %defattr(644, root, root, 755)
-%doc HACKING doc/index.html doc/fontinfo.README
+%doc doc/index.html doc/fontinfo.README
 /usr/X11R6/lib/lib*.so
 /usr/X11R6/include/*
 
@@ -82,6 +80,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644, root,root) /usr/X11R6/lib/*.a
 
 %changelog
+* Tue Jan 05 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.4-1]
+- changed base Source Url to ftp://ftp.gnome.org/pub/GNOME/sources/,
+- sysconfdir changed to /etc/X11,
+- removed HACKING from %doc,
+- added useing DESTDIR in "make install",
+- added LDFLAGS="-s" to ./configure enviroment.
+
 * Mon Oct 26 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.3-4]
 - header files moved to /usr/X11R6/include,
