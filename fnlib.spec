@@ -39,7 +39,7 @@ Summary(es):	Archivos de inclusión, bibliotecas estáticas y documentación para f
 Summary(pl):	Pliki nag³ówkowe oraz dokumentacja
 Summary(pt_BR):	Arquivos de inclusão, bibliotecas e documentação para a fnlib
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Headers and documentation for Fnlib.
@@ -59,7 +59,7 @@ Summary:	Fnlib static libraries
 Summary(pl):	Biblioteki statyczne fnlib
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com fnlib
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Fnlib static libraries.
