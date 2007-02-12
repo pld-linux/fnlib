@@ -1,7 +1,7 @@
 Summary:	Color Font rendering library for X11R6
-Summary(es):	Biblioteca de render de fuentes coloridas para el X11R6
-Summary(pl):	Biblioteki do renderowania fontÛw pod X11R6
-Summary(pt_BR):	Biblioteca para renderizaÁ„o colorida de fontes para o X11R6
+Summary(es.UTF-8):   Biblioteca de render de fuentes coloridas para el X11R6
+Summary(pl.UTF-8):   Biblioteki do renderowania font√≥w pod X11R6
+Summary(pt_BR.UTF-8):   Biblioteca para renderiza√ß√£o colorida de fontes para o X11R6
 Name:		fnlib
 Version:	0.5
 Release:	11
@@ -22,53 +22,53 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Fnlib is a library that provides full scalable 24-bit Color font
 rendering abilities for X.
 
-%description -l es
+%description -l es.UTF-8
 Biblioteca de render de fuentes coloridas para el X11R6.
 
-%description -l pl
-Fnlib jest bibliotek±, ktÛra umoøliwia renderowanie fontÛw
+%description -l pl.UTF-8
+Fnlib jest bibliotekƒÖ, kt√≥ra umo≈ºliwia renderowanie font√≥w
 skalowalnych pod X11.
 
-%description -l pt_BR
-A fnlib È uma biblioteca que fornece renderizaÁ„o completa e escal·vel
+%description -l pt_BR.UTF-8
+A fnlib √© uma biblioteca que fornece renderiza√ß√£o completa e escal√°vel
 de 24 bits de cores para fontes no X.
 
 %package devel
 Summary:	Fnlib headers and documentation
-Summary(es):	Archivos de inclusiÛn, bibliotecas est·ticas y documentaciÛn para fnlib
-Summary(pl):	Pliki nag≥Ûwkowe oraz dokumentacja
-Summary(pt_BR):	Arquivos de inclus„o, bibliotecas e documentaÁ„o para a fnlib
+Summary(es.UTF-8):   Archivos de inclusi√≥n, bibliotecas est√°ticas y documentaci√≥n para fnlib
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe oraz dokumentacja
+Summary(pt_BR.UTF-8):   Arquivos de inclus√£o, bibliotecas e documenta√ß√£o para a fnlib
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Headers and documentation for Fnlib.
 
-%description devel -l es
-Archivos de inclusiÛn, bibliotecas est·ticas y documentaciÛn para
+%description devel -l es.UTF-8
+Archivos de inclusi√≥n, bibliotecas est√°ticas y documentaci√≥n para
 fnlib.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe oraz dokumentacja dla Fnliba.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe oraz dokumentacja dla Fnliba.
 
-%description devel -l pt_BR
-Arquivos de inclus„o, bibliotecas e documentaÁ„o para a fnlib.
+%description devel -l pt_BR.UTF-8
+Arquivos de inclus√£o, bibliotecas e documenta√ß√£o para a fnlib.
 
 %package static
 Summary:	Fnlib static libraries
-Summary(pl):	Biblioteki statyczne fnlib
-Summary(pt_BR):	Bibliotecas est·ticas para desenvolvimento com fnlib
+Summary(pl.UTF-8):   Biblioteki statyczne fnlib
+Summary(pt_BR.UTF-8):   Bibliotecas est√°ticas para desenvolvimento com fnlib
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Fnlib static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne fnlib.
 
-%description static -l pt_BR
-Bibliotecas est·ticas para desenvolvimento com fnlib
+%description static -l pt_BR.UTF-8
+Bibliotecas est√°ticas para desenvolvimento com fnlib
 
 %prep
 %setup -q
