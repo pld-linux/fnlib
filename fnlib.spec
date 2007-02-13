@@ -1,7 +1,7 @@
 Summary:	Color Font rendering library for X11R6
-Summary(es.UTF-8):   Biblioteca de render de fuentes coloridas para el X11R6
-Summary(pl.UTF-8):   Biblioteki do renderowania fontów pod X11R6
-Summary(pt_BR.UTF-8):   Biblioteca para renderização colorida de fontes para o X11R6
+Summary(es.UTF-8):	Biblioteca de render de fuentes coloridas para el X11R6
+Summary(pl.UTF-8):	Biblioteki do renderowania fontów pod X11R6
+Summary(pt_BR.UTF-8):	Biblioteca para renderização colorida de fontes para o X11R6
 Name:		fnlib
 Version:	0.5
 Release:	11
@@ -35,9 +35,9 @@ de 24 bits de cores para fontes no X.
 
 %package devel
 Summary:	Fnlib headers and documentation
-Summary(es.UTF-8):   Archivos de inclusión, bibliotecas estáticas y documentación para fnlib
-Summary(pl.UTF-8):   Pliki nagłówkowe oraz dokumentacja
-Summary(pt_BR.UTF-8):   Arquivos de inclusão, bibliotecas e documentação para a fnlib
+Summary(es.UTF-8):	Archivos de inclusión, bibliotecas estáticas y documentación para fnlib
+Summary(pl.UTF-8):	Pliki nagłówkowe oraz dokumentacja
+Summary(pt_BR.UTF-8):	Arquivos de inclusão, bibliotecas e documentação para a fnlib
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -56,8 +56,8 @@ Arquivos de inclusão, bibliotecas e documentação para a fnlib.
 
 %package static
 Summary:	Fnlib static libraries
-Summary(pl.UTF-8):   Biblioteki statyczne fnlib
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento com fnlib
+Summary(pl.UTF-8):	Biblioteki statyczne fnlib
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com fnlib
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
